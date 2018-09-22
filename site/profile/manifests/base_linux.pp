@@ -61,4 +61,8 @@ class profile::base_linux {
     }
   }
 
+  package { 'binclock':
+    ensure => present,
+  }
+
 }
