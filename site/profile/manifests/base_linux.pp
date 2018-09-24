@@ -18,10 +18,6 @@ class profile::base_linux {
     timezone => 'Europe/Oslo',
   }
 
-  package { $linux_sw_pkg:
-    ensure => latest,
-  }
-
   package { ['htop', 'sysstat', 'vim']:
     ensure => 'latest',
   }
