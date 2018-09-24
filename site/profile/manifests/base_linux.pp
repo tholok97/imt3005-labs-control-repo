@@ -22,9 +22,9 @@ class profile::base_linux {
     ensure => 'latest',
   }
 
-  file { '~/.vimrc':
+  file { '/root/.vimrc':
     ensure => 'present',
-    source => puppet:///modules/profile/files/vimrc,
+    source => 'puppet:///modules/profile/files/vimrc',
   }
 
 # root@manager should be able to ssh without password to all
