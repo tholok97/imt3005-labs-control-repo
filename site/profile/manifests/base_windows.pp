@@ -25,7 +25,7 @@ class profile::base_windows {
     ensure => '8.0.604',
   }
 
-  file { '/root/.vimrc':
+  file { 'C:\Users\Admin\_vimrc':
     ensure => 'present',
     source => 'puppet:///modules/profile/vimrc',
   }
