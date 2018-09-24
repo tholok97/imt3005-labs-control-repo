@@ -1,9 +1,2 @@
 ---
-base_windows::win_sw_pkg:
-  - 'notepadplusplus'
-  - 'git'
-base_linux::linux_sw_pkg:
-  - 'htop'
-  - 'sysstat'
-  - 'vim'
 base_linux::root_ssh_key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC+YEgdka3GOqAvpvOXi3m2cFkh+dOnGyWsMzN1aQgBs75If8Wi/bFTTDXfZHDcc0bpgR/p2VI7HEDYEJ4ZjeAhQW9HkG/GZ9GMul2LMhZ0lq++TECl6W6UkPtIgP8mzc0nuuaSMXs3h7rWMFrMskdgg1osY56xzqcTEksqbVL7Xr9VW0fXd0dzTTdFnSF6YdGul0JcvJ1IJclvN0f0QS1cquIRAzpAi24TyGAjKLGGLsCtg5LGqyQyu+5eBBgHa0a2DOEx8Z5IM3GhGTByw0oYP1IQThr3MWRakJguNG1eDNThgG+3K25xsXDC5OUjhHdpTm6LUP07+2fRiIvYDVUB'

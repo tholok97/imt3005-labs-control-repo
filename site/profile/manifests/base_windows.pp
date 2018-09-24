@@ -4,8 +4,6 @@
 
 class profile::base_windows {
 
-  $win_sw_pkg = lookup('base_windows::win_sw_pkg')
-
 # set default package provider on windows to chocolatey,
 # please read https://chocolatey.org/security
 # in the future maybe use DSC instead when this is ready:
@@ -20,10 +18,6 @@ class profile::base_windows {
       { Package { provider => chocolatey, } }
     default:
       { Package { provider => windows, } }
-  }
-
-  package { $win_sw_pkg:
-    ensure => 'latest',
   }
 
 # a specific version of vim I know is trusted

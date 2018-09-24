@@ -5,7 +5,6 @@
 class profile::base_linux {
 
   $root_ssh_key = lookup('base_linux::root_ssh_key')
-  $linux_sw_pkg = lookup('base_linux::linux_sw_pkg')
 
 # careful when configuring ntp to avoid misuse (opening for DDOS)
   class { 'ntp':
@@ -21,6 +20,10 @@ class profile::base_linux {
 
   package { $linux_sw_pkg:
     ensure => latest,
+  }
+
+  package { ['htop', 'sysstat', 'vim']:
+    ensure => 'latest',
   }
 
 # root@manager should be able to ssh without password to all
