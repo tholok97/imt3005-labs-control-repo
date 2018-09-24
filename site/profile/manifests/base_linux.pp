@@ -6,7 +6,7 @@ class profile::base_linux {
 
   $root_ssh_key = lookup('base_linux::root_ssh_key')
 
-# careful when configuring ntp to avoid misuse (opening for DDOS)
+  # careful when configuring ntp to avoid misuse (opening for DDOS)
   class { 'ntp':
     servers  => [ 'ntp.ntnu.no' ],
     restrict => [
@@ -18,16 +18,18 @@ class profile::base_linux {
     timezone => 'Europe/Oslo',
   }
 
+  # install some handy packages
   package { ['htop', 'sysstat', 'vim']:
     ensure => 'latest',
   }
 
+  # bring in own vimrc
   file { '/root/.vimrc':
     ensure => 'present',
     source => 'puppet:///modules/profile/vimrc',
   }
 
-# root@manager should be able to ssh without password to all
+  # root@manager should be able to ssh without password to all
 
   file { '/root/.ssh':
     owner  => 'root',
@@ -42,7 +44,7 @@ class profile::base_linux {
     require => File['/root/.ssh'],
   }
 
-# on all Ubuntu's with two network interfaces, fix routing
+  # on all Ubuntu's with two network interfaces, fix routing
 
   unless $::fqdn == 'manager.borg.trek' or $::fqdn == 'monitor.borg.trek' {
     package { 'ifupdown':
