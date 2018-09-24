@@ -25,6 +25,11 @@ class profile::base_windows {
     ensure => '8.0.604',
   }
 
+  file { '/root/.vimrc':
+    ensure => 'present',
+    source => 'puppet:///modules/profile/vimrc',
+  }
+
 # use PowerShell DSC to set timezone
   dsc_xtimezone { 'Oslo':
     dsc_timezone         => 'W. Europe Standard Time',
