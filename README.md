@@ -1,6 +1,6 @@
 # Control-repo for Puppet-based infrastructure used in labs 5 and 6 in IMT3005 - Infrastructure as Code
 
-**Based on [puppetlabs/control-repo](https://github.com/puppetlabs/control-repo). The original readme can be found [here](./original_readme.md).**
+*Based on [puppetlabs/control-repo](https://github.com/puppetlabs/control-repo). The original readme can be found [here](./original_readme.md).*
 
 ## Structure
 
