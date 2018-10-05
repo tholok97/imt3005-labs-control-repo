@@ -31,3 +31,9 @@ mod 'gentoo-portage',            '2.3.0'
 
 # docker
 mod 'puppetlabs-docker',         '3.0.0'
+
+# dependencies of docker
+mod 'puppetlabs-apt', '6.1.1'
+mod 'puppetlabs-translate', '1.1.0'
+mod 'puppetlabs-powershell', '2.1.5'
+mod 'puppetlabs-reboot', '2.0.0'
