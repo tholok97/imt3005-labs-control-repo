@@ -21,6 +21,10 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable"
 RUN apt-get update && apt-get install -y docker-ce
+
+RUN /usr/local/bin/install-plugins.sh docker-plugin
+
+RUN usermod -a -G docker jenkins
   ',
   }
 
@@ -36,8 +40,6 @@ RUN apt-get update && apt-get install -y docker-ce
     ports      => ['8080:8080', '50000:50000'],
     volumes    => ['jenkins_home:/var/jenkins_home',
                    '/var/run/docker.sock:/var/run/docker.sock'],
-    privileged => true,
-    username   => 'root',
     subscribe  => Docker::Image['jenkins'],
   }
 }
